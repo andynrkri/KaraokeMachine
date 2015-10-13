@@ -1,0 +1,17 @@
+import com.anandtyagi.KaraokeMachine;
+import com.anandtyagi.model.SongBook;
+import java.io.IOException;
+
+/**
+ * Created by VOSTRO on 8/24/2015.
+ */
+public class Karaoke {
+    public static void main(String[] args) throws IOException {
+        SongBook songBook = new SongBook();
+        songBook.importFrom("E:\\songs.txt");
+        KaraokeMachine karaokeMachine = new KaraokeMachine(songBook);
+        karaokeMachine.run();
+        System.out.println("Saving book.....");
+        songBook.exportTo("E:\\songs.txt");
+    }
+}
